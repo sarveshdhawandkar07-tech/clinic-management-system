@@ -1,0 +1,147 @@
+[
+    {
+        "patient_id": "2026-0001",
+        "personal_information": {
+            "name": "Sarvesh",
+            "age": 18,
+            "weight": 47.0,
+            "gender": "Male",
+            "contact": "9146733495",
+            "address": "Nanded, India"
+        },
+        "past_medical_history": {
+            "conditions": [
+                "Ulcer",
+                " Allergy"
+            ],
+            "past_surgeries": [
+                "None"
+            ],
+            "current_medications": [
+                "Homeopathy tablets for allergy"
+            ],
+            "allergies": [
+                "Old Dust"
+            ],
+            "family_history": [
+                "Clear"
+            ],
+            "social_history": [
+                "Clear"
+            ]
+        },
+        "visits": [
+            {
+                "date": "2026-06-05 16:37",
+                "reason_for_visit": "Cough, Cold, Fever",
+                "symptoms": "Cold, High Fever, Cough",
+                "diagnosis": "Viral",
+                "treatment_plan": "Calpol - 500, drop, multivitamin tonic"
+            }
+        ]
+    },
+    {
+        "patient_id": "2026-0002",
+        "personal_information": {
+            "name": "Rajkumar",
+            "age": 50,
+            "weight": 65.0,
+            "gender": "Male",
+            "contact": "9146339106",
+            "address": "Nanded"
+        },
+        "past_medical_history": {
+            "conditions": [
+                "None"
+            ],
+            "past_surgeries": [
+                "None"
+            ],
+            "current_medications": [
+                "None"
+            ],
+            "allergies": [
+                "Dust"
+            ],
+            "family_history": [
+                "Clear"
+            ],
+            "social_history": [
+                "Clear"
+            ]
+        },
+        "visits": []
+    },
+    {
+        "patient_id": "2026-0003",
+        "personal_information": {
+            "name": "Anuja",
+            "age": 42,
+            "weight": 70.0,
+            "gender": "Female",
+            "contact": "9860128821",
+            "address": "Nanded"
+        },
+        "past_medical_history": {
+            "conditions": [
+                "None"
+            ],
+            "past_surgeries": [
+                "Ear operation"
+            ],
+            "current_medications": [
+                "Stress relief tablets"
+            ],
+            "allergies": [
+                "None"
+            ],
+            "family_history": [
+                "Clear"
+            ],
+            "social_history": [
+                "Clear"
+            ]
+        },
+        "visits": [
+            {
+                "date": "2026-06-05 16:39",
+                "reason_for_visit": "stomache ache",
+                "symptoms": "vomitting, stomach pain",
+                "diagnosis": "Normal Stomach Ache",
+                "treatment_plan": "tablets"
+            }
+        ]
+    },
+    {
+        "patient_id": "2026-0004",
+        "personal_information": {
+            "name": "Rushikesh",
+            "age": 25,
+            "weight": 60.0,
+            "gender": "Male",
+            "contact": "9579195543",
+            "address": "Nanded"
+        },
+        "past_medical_history": {
+            "conditions": [
+                "None"
+            ],
+            "past_surgeries": [
+                "None"
+            ],
+            "current_medications": [
+                "Homeopathy Tablets for ear"
+            ],
+            "allergies": [
+                "None"
+            ],
+            "family_history": [
+                "Clear"
+            ],
+            "social_history": [
+                "Clear"
+            ]
+        },
+        "visits": []
+    }
+]
