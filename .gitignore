@@ -1,3 +1,4 @@
 patients.json
 __pyache__/
 *.pyc
+*.code-workspace
