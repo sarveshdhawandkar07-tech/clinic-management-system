@@ -77,8 +77,8 @@ class Patient:
                 print("Invalid name. Please enter a valid patient name.")
                 return
             age = int(input("Enter patient's age:(0-120) :"))
-            if age not in range(0,121):
-                print("Invalid age. Please enter a value between 0 and 120.")
+            if age not in range(1,121):
+                print("Invalid age. Please enter a value between 1 and 120.")
                 return
             weight = float(input("Enter patient's weight (kg): "))
             if weight <= 0 or weight > 300:
