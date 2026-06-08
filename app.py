@@ -110,12 +110,24 @@ elif page == "Patient Records":
 
             with col2:
                 if st.button("Delete Patient"):
-                    patient_manager.load_data()
-                    patient_manager.patients = [p for p in patient_manager.patients if p["patient_id"] != selected_id]
-                    patient_manager.save_data()
-                    del st.session_state.patient_results
-                    st.success("Patient deleted successfully.")
-                    st.stop()
+                    st.session_state.confirm_delete = selected_id
+
+            if st.session_state.get("confirm_delete") == selected_id:
+                st.warning(f"Are you sure you want to delete this patient? This cannot be undone.")
+                col3, col4 = st.columns(2)
+                with col3:
+                    if st.button("Yes, Delete"):
+                        patient_manager.load_data()
+                        patient_manager.patients = [p for p in patient_manager.patients if p["patient_id"] != selected_id]
+                        patient_manager.save_data()
+                        del st.session_state.patient_results
+                        del st.session_state.confirm_delete
+                        st.success("Patient deleted successfully.")
+                        st.stop()
+                with col4:
+                    if st.button("Cancel"):
+                        del st.session_state.confirm_delete
+                        st.rerun()
 
             # --- Add Visit Form ---
             if st.session_state.get("show_add_visit") and st.session_state.get("selected_id") == selected_id:
