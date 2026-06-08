@@ -20,20 +20,31 @@ A web-based patient record management system built for single-doctor clinics. Bu
 - JSON for data storage
 
 ## How to Run Locally
+
 1. Clone the repository
+```
 git clone https://github.com/sarveshdhawandkar07-tech/clinic-management-system.git
+```
+
 2. Install dependencies
+```
 pip install streamlit
+```
+
 3. Run the app
+```
 streamlit run app.py
+```
 
 ## Project Structure
+```
 clinic-management-system/
 ├── app.py          # Streamlit web interface
 ├── main.py         # Core logic and Patient class
 ├── utils.py        # Helper functions (ID generation)
 ├── requirements.txt
 └── README.md
+```
 
 ## Author
 Sarvesh Dhawandkar — First Year AI & Data Science Engineering Student
