@@ -78,6 +78,9 @@ elif page == "Patient Records":
 
     
     if st.button("Search"):
+        st.session_state.active_action = None
+        st.session_state.confirm_edit = False
+        st.session_state.confirm_delete = None
         patient_manager.load_data()
         results = []
         for p in patient_manager.patients:
@@ -108,14 +111,12 @@ elif page == "Patient Records":
 
             col1, col2, col3 = st.columns(3)
 
-            action = st.session_state.get("active_action")
+            
 
             with col1:
                 if st.button("Add Visit"):
-                    if st.session_state.get("active_action") == "add_visit":
-                        st.session_state.active_action = None
-                    else:
-                        st.session_state.active_action = "add_visit"
+                    st.session_state.active_action = "add_visit"
+                    st.rerun()
 
             with col2:
                 if st.button("Delete Patient"):
@@ -123,10 +124,8 @@ elif page == "Patient Records":
             
             with col3:
                 if st.button("Edit Patient"):
-                    if st.session_state.get("active_action") == "edit":
-                        st.session_state.active_action = None
-                    else:
-                        st.session_state.active_action = "edit"
+                    st.session_state.active_action = "edit"
+                    st.rerun()
 
             if st.session_state.get("confirm_delete") == selected_id:
                 st.warning(f"Are you sure you want to delete this patient?")
@@ -146,7 +145,7 @@ elif page == "Patient Records":
                         st.rerun()
 
             
-            if action == "add_visit":
+            if st.session_state.get("active_action") == "add_visit":
                 st.subheader("Add Visit")
                 visit_reason = st.text_input("Reason for Visit")
                 symptoms = st.text_area("Symptoms")
@@ -181,7 +180,7 @@ elif page == "Patient Records":
 
     
             # --- Edit Patient Form ---
-            elif action == "edit":
+            elif st.session_state.get("active_action") == "edit":
                 st.subheader("Edit Patient Details")
                 pi = selected_patient["personal_information"]
                 mh = selected_patient["past_medical_history"]
@@ -208,6 +207,7 @@ elif page == "Patient Records":
                 with col_b:
                     if st.button("Cancel Edit"):
                         st.session_state.active_action = None
+                        st.session_state.confirm_edit = False
                         st.rerun()
 
                 if st.session_state.get("confirm_edit"):
@@ -234,7 +234,7 @@ elif page == "Patient Records":
                             patient_manager.save_data()
                             st.session_state.active_action = None
                             st.session_state.confirm_edit = False
-                            del st.session_state.patient_results
+                            st.session_state.patient_results = []
                             st.success("Patient details updated successfully!")
                             st.stop()
                     with col_d:
